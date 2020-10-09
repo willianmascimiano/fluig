@@ -1,0 +1,17 @@
+application.type=widget
+application.code=Pesquisador
+application.title=Pesquisador
+application.description=Pesquisador
+application.category=Tecnologia
+application.renderer=freemarker
+developer.code=willian.eti.br
+developer.name=Willian
+developer.url=http://willian.eti.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=Pesquisador
+application.resource.js.1=/resources/js/Pesquisador.js
+application.resource.css.2=/resources/css/Pesquisador.css
+application.resource.component.1=fluigfilter
