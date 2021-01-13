@@ -2,6 +2,7 @@
  * CONTATO: http://willian.eti.br Função para Anexar arquivos dentro do GED
  * 
  * Anexar arquivo no GED e em seguida anexar ao processo.
+ * Documento de Referência: https://git.fluig.com/projects/SAMPLES/repos/datasets/browse/dataset-create-document
  ******************************************************************************/
 
 /*******************************************************************************
