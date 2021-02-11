@@ -35,7 +35,7 @@
 
 var settings = {
 	    source: {
-	        url: '/api/public/ecm/dataset/search?datasetId=DSConfiguraBuscador&',
+	        url: '/api/public/ecm/dataset/search?datasetId=ds_configura_explorer&',
 	        contentType: 'application/json',
 	        root: 'content',
 	        pattern: '',
