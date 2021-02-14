@@ -32,7 +32,7 @@ function createDataset(fields, constraints, sortFields) {
 	
 	
 	
-	var datasetPrincipal = DatasetFactory.getDataset("ds_configura_explorer", null, constraints, null);
+	var datasetPrincipal = DatasetFactory.getDataset("ds_frm_configura_explorer", null, constraints, null);
 	var resultados = [];
 	for (var i = 0; i < datasetPrincipal.rowsCount; i++) {
 		var documentId = datasetPrincipal.getValue(i, "metadata#id");
@@ -63,5 +63,8 @@ function createDataset(fields, constraints, sortFields) {
 
 
 function onMobileSync(user) {
+	
+	
+	
 
 }

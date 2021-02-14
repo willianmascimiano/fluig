@@ -4,7 +4,7 @@
 
 
 
-<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+<div id="ExplorerWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="ExplorerWidget.instance()">
 
 <!-- ACESSO A DATASETS POR MEIO DA BIBLIOTECA vcXMLRPC.js -->
 <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
@@ -26,7 +26,7 @@
     </tr>
 </script>
 
-<div id="idtable_${instanceId}"></div>
+<div id="explorer_table_${instanceId}"></div>
 </div>
 
 
@@ -35,7 +35,7 @@
 
 var settings = {
 	    source: {
-	        url: '/api/public/ecm/dataset/search?datasetId=ds_configura_explorer&',
+	        url: '/api/public/ecm/dataset/search?datasetId=ds_frm_configura_explorer&',
 	        contentType: 'application/json',
 	        root: 'content',
 	        pattern: '',
@@ -71,7 +71,7 @@ var settings = {
 
  filter.on('fluig.filter.item.added', function (data) {
 $("#config_nome_dataset").val(filter.getSelectedItems()[0].config_nome_dataset);
-MyWidget_${instanceId}.loadTable();
+ExplorerWidget_${instanceId}.loadTable();
 /*    
 FLUIGC.toast({
         title: 'Item selected: ',
