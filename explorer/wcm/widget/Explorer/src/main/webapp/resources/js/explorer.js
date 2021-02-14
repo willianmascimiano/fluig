@@ -1,3 +1,86 @@
+
+
+var DsFactory = {
+		
+		//ds_header_list :[],
+		//ds_header_field_name : [],
+		//ds_header_field_value : [],
+		
+	
+
+	dataset_name : document.getElementById("config_nome_dataset").value,
+	dataset_result : 
+			DatasetFactory.getDataset(this.dataset_name, null, null, null).values,
+
+	dsHeaderList: ()=>{
+
+
+		var result = DatasetFactory.getDataset("ds_configura_explorer", [DsFactory.dataset_name], null,null).values;
+
+		 
+		 ds_header_list = new Array();
+		 ds_header_field_name = new Array();
+		 ds_header_field_value = new Array();
+		
+		
+		for (i = 0; i <= result.length - 1; i++) {
+			
+			this.ds_header_list.push([ result[i]['config_campo'], result[i]['config_nome'] ] ); 
+			 
+		}
+		
+		 
+		return ds_header_list;
+	},
+	
+	 
+	
+	 
+	dsHeaderField : function() {
+		var cabecalho = new Array();
+		var cabecalhoList = new Array();
+
+		cabecalho = this.dsHeaderList();
+
+		for (i = 0; i <= cabecalho.length - 1; i++) {
+			cabecalhoList.push({
+				"title" : cabecalho[i][1]
+			});
+		}
+		return cabecalhoList;
+
+	},
+	
+	// Retorna o nome do campo
+	dsHeaderValue : function() {
+		var cabecalho = new Array();
+		var cabecalhoList = new Array();
+
+		cabecalho = this.dsHeaderList();
+
+		for (i = 0; i <= cabecalho.length - 1; i++) {
+			cabecalhoList.push(cabecalho[i][0]);
+		}
+
+		return cabecalhoList;
+
+	},
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 var ExplorerWidget = SuperWidget.extend({
 	// variáveis da widget
 	variavelNumerica : null,
@@ -22,12 +105,12 @@ var ExplorerWidget = SuperWidget.extend({
 	loadTable : function() {
 
 		var that = this;
-		var ds = DsFactory;
+
 		that.myTable = FLUIGC.datatable('#explorer_table_' + that.instanceId, {
-			dataRequest : this.ds.dataset_result,
-			renderContent : this.ds.dsFieldName(),
+			dataRequest : that.DsFactory.dataset_result,
+			renderContent : that.DsFactory.dsFieldName(),
 			// renderContent: '.template_datatable',
-			header : this.ds.dsFieldValue(),
+			header : that.DsFactory.dsFieldValue(),
 
 			search : {
 				colunas : new Array(),
@@ -110,74 +193,3 @@ var ExplorerWidget = SuperWidget.extend({
  * 
  * **/
 
-
-
-var DsFactory = {
-		
-		//ds_header_list :[],
-		//ds_header_field_name : [],
-		//ds_header_field_value : [],
-		
-	
-
-	dataset_name : document.getElementById("config_nome_dataset").value,
-	dataset_result : 
-			DatasetFactory.getDataset(this.dataset_name, null, null, null).values,
-
-	dsHeaderList: ()=>{
-
-
-		var result = DatasetFactory.getDataset("ds_configura_explorer", [DsFactory.dataset_name], null,null).values;
-
-		 
-		 ds_header_list = new Array();
-		 ds_header_field_name = new Array();
-		 ds_header_field_value = new Array();
-		
-		
-		for (i = 0; i <= result.length - 1; i++) {
-			
-			this.ds_header_list.push([ result[i]['config_campo'], result[i]['config_nome'] ] ); 
-			 
-		}
-		
-		 
-		return ds_header_list;
-	},
-	
-	 
-	
-	 
-	dsHeaderField : function() {
-		var cabecalho = new Array();
-		var cabecalhoList = new Array();
-
-		cabecalho = this.dsHeaderList();
-
-		for (i = 0; i <= cabecalho.length - 1; i++) {
-			cabecalhoList.push({
-				"title" : cabecalho[i][1]
-			});
-		}
-		return cabecalhoList;
-
-	},
-	
-	// Retorna o nome do campo
-	dsHeaderValue : function() {
-		var cabecalho = new Array();
-		var cabecalhoList = new Array();
-
-		cabecalho = this.dsHeaderList();
-
-		for (i = 0; i <= cabecalho.length - 1; i++) {
-			cabecalhoList.push(cabecalho[i][0]);
-		}
-
-		return cabecalhoList;
-
-	},
-
-}
-
-DsFactory.dsHeaderField();

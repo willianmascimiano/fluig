@@ -9,7 +9,7 @@
 <!-- ACESSO A DATASETS POR MEIO DA BIBLIOTECA vcXMLRPC.js -->
 <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
 
-<input id="filter-example-generic" type="text" name="filter-example-generic"/>
+<input id="filtro_dataset" type="text" name="filtro_dataset"/>
 <input  type='hidden' id='config_nome_dataset' name='config_nome_dataset' />
 
 <script type="text/template" class="template_datatable">
@@ -66,11 +66,13 @@ var settings = {
 	    }
 	};
 	 
-	var filter = FLUIGC.filter('#filter-example-generic', settings);
+	var filter = FLUIGC.filter('#filtro_dataset', settings);
 
 
  filter.on('fluig.filter.item.added', function (data) {
 $("#config_nome_dataset").val(filter.getSelectedItems()[0].config_nome_dataset);
+var nome_dataset= $('#config_nome_dataset').val() ;
+alert(nome_dataset);
 ExplorerWidget_${instanceId}.loadTable();
 /*    
 FLUIGC.toast({

@@ -1,3 +1,17 @@
+# Boas Práticas
+
+Formulários:
+- Nomenclatura: frm_inserir_pedido , frm_receber_nota
+- Dataset do formulário: ds_frm_receber_nota
+- Tabelas Pai X Filho: tbl_itens ; tbl_centro_custo ; tbl_natureza_financeira
+- Dataset de Itens do dataset: ds_frm_receber_nota_cc , ds_frm_receber_nota_natureza, ds_frm_receber_nota_itens
+
+Dataset:
+- Quando for sistema externo: receita_consultar_cpf, correios_consultar_cep, rm_consultar_cliente
+
+*Processos*
+- receber_nota : Receber Nota
+
 # Bibliotecas de apoio para utilizar no Fluig
 
 Conjunto de soluções para serem utilizados em projetos fluig que foram criados com objetivo de apoiar a comunidade de desenvolvedores.
