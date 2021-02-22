@@ -1,3 +1,15 @@
+#Como abrir os Projeto no Eclipse.
+
+Você poderá clonar o projeto Fluig Inteiro, porém logo em seguida utilizar o recurso
+import do eclipse e importar apenas cada processo individualmente e não a pasta
+fluig inteira, pois de alguma forma o Plugin do Eclipse não exporta os recursos
+quando estão em subpastas.
+
+Acessar o Eclipse > Import from Existing Projects into WorkSpace.
+
+Se estiver importado a pasta Fluig será necessário clicar em delete dentro do eclipse, em seguida deixar a opçao (delete from disk) desmarcada.
+
+
 # Boas Práticas
 
 Formulários:
