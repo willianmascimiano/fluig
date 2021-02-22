@@ -18,8 +18,15 @@ Formulários:
 - Tabelas Pai X Filho: tbl_itens ; tbl_centro_custo ; tbl_natureza_financeira
 - Dataset de Itens do dataset: ds_frm_receber_nota_cc , ds_frm_receber_nota_natureza, ds_frm_receber_nota_itens
 
-Dataset:
+*Dataset:*
 - Quando for sistema externo: receita_consultar_cpf, correios_consultar_cep, rm_consultar_cliente
+
+*Papeis:*
+Criar papeis intuitivos, que podem referenciar aos processo ou rotinas do sistema.
+- receber_nota , selecionar_pessoa, gestor_administrativo , gestor_financeiro
+
+*Grupos:*
+- administrativo , financeiro, comercial , gestao_comercial , 
 
 *Processos*
 - receber_nota : Receber Nota

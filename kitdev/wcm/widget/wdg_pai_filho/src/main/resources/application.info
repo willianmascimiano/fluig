@@ -1,0 +1,16 @@
+application.type=widget
+application.code=wdg_pai_filho
+application.title=Widget Pai x Filho
+application.description=Widget Pai x Filho
+application.category=WSA
+application.renderer=freemarker
+developer.code=willian
+developer.name=willian
+developer.url=http://willian.eti.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=wdg_pai_filho
+application.resource.js.1=/resources/js/wdg_pai_filho.js
+application.resource.css.2=/resources/css/wdg_pai_filho.css
