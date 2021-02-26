@@ -1,6 +1,8 @@
 /*******************************************************************************
- * WILLIAN MASCIMIANO CONTATO: http://willian.eti.br 
  * ARQUIVO DE EXEMPLO PARA EXECUÇÃO DE FORMULA VISUAL DO RM PELO WEBSERVICE E FLUIG.
+ * 
+ * 
+ * Créditos: https://api.totvs.com.br/legado/devrm/bo_rm/
  ******************************************************************************/
 
 function createDataset(fields, constraints, sortFields) {
@@ -10,35 +12,42 @@ function createDataset(fields, constraints, sortFields) {
 	
 
 	try {
+		
+		/*
+		 * 
+		 * Código necessário para execucao do servico dentro do RM.
+		 * 
+		 * 
+		 * */
 		var NOME_SERVICO = "RMProcessTESTE";
 		var CAMINHO_SERVICO = 'com.totvs.WsProcess';
 
-		var processService = ServiceManager.getServiceInstance(NOME_SERVICO);
-		if (processService == null) {
+		var service_instance = ServiceManager.getServiceInstance(NOME_SERVICO);
+		if (service_instance == null) {
 			throw "Servico nao encontrado: " + NOME_SERVICO;
 		}
 
-		var serviceLocator = processService.instantiate(CAMINHO_SERVICO);
-		if (serviceLocator == null) {
+		var service_locator = service_instance.instantiate(CAMINHO_SERVICO);
+		if (service_locator == null) {
 			throw "Instancia do servico nao encontrada: " + NOME_SERVICO
 					+ " - " + CAMINHO_SERVICO;
 		}
 
-		var service = serviceLocator.getRMIwsProcess();
+		var service = service_locator.getRMIwsProcess();
 		if (service == null) {
 			throw "Instancia do dataserver do invalida: " + NOME_SERVICO
 					+ " - " + CAMINHO_SERVICO;
 		}
 
-		var serviceHelper = processService.getBean();
-		if (serviceHelper == null) {
+		var service_helper = processService.getBean();
+		if (service_helper == null) {
 			throw "Instancia do service helper invalida: " + NOME_SERVICO
 					+ " - " + CAMINHO_SERVICO;
 		}
 
-		var authService = serviceHelper.getBasicAuthenticatedClient(service,
+		var authService = service_helper.getBasicAuthenticatedClient(service,
 				"com.totvs.IwsProcess", "mestre", "senha");
-		if (serviceHelper == null) {
+		if (service_helper == null) {
 			throw "Instancia do auth service invalida: " + NOME_SERVICO + " - "
 					+ CAMINHO_SERVICO;
 		}
@@ -46,6 +55,17 @@ function createDataset(fields, constraints, sortFields) {
 		
 		
 		
+		/*
+		 * Este XML é gerado pelo processo dentro do RM.
+		 * Crie a fórmula visual e em seguida a execute.
+		 * Vá até a aba Ambiente > Processos > Jobs.
+		 * 
+		 * Verifique todos os processos executados e identifique o processo referente à fórmula visual.
+		 * Abra o job, vá em anexos e escolha a oopcao XML do Job.
+		 * 
+		 * Adapte o XML abaixo à sua necessidade.
+		 * 
+		 * */
 		var fieldsXml = '<?xml version="1.0" encoding="utf-16"?>'
 +'<GlbWorkflowExecParamsProc z:Id="i1" xmlns="http://www.totvs.com.br/RM/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">'
 +'  <ActionModule xmlns="http://www.totvs.com/">G</ActionModule>'
